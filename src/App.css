@@ -1,38 +1,116 @@
-.App {
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6;  /* Soft, neutral background */
+  color: #333;  /* Darker text for better contrast */
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
   text-align: center;
+  padding: 50px;
+  background-color: white;  /* White container for clarity */
+  border-radius: 10px;  /* Soft corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Light shadow */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;  /* Dark text for readability */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slotMachine {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slot {
+  font-size: 24px;
+  width: 200px;  /* Increased width for slot boxes */
+  height: 70px;  /* Height for slot boxes */
+  border: 1px solid #ccc;  /* Simple border */
+  border-radius: 10px;  /* Rounded corners */
+  background-color: #fff;  /* Solid background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  overflow: hidden;  /* Prevent text overflow */
+  position: relative;  /* Required for positioning */
+}
+
+/* Add additional margin for the checkbox */
+.checkbox-container {
+  margin: 20px 0;  /* Space above and below the checkbox */
+}
+
+
+/* Checkbox and label styles */
+.options {
+  margin: 20px;
+}
+
+.options label {
+  font-size: 18px;
+  color: #333;
+}
+
+
+.slot div {
+  transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Maintain spinning animation */
+.spinning {
+  animation: spin 0.1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid #007bff;  /* Soft border */
+  border-radius: 25px;
+  background-color: #007bff;  /* Solid button color */
   color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Light shadow for depth */
+  transition: background 0.3s, transform 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled {
+  background: #ccc;  /* Disabled button color */
+  border-color: #aaa;  /* Light border when disabled */
+  cursor: not-allowed;  /* Change cursor when disabled */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:not(:disabled):hover {
+  background-color: #0056b3;  /* Darker shade on hover */
+  transform: translateY(-2px);  /* Lift effect on hover */
+}
+
+.result h2 {
+  font-size: 28px;
+  margin-top: 20px;
+  color: #007bff;  /* Solid color for result text */
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;  /* Dark text for readability */
 }
